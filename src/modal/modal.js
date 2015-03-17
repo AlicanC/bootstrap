@@ -186,6 +186,9 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
         //clean up the stack
         openedWindows.remove(modalInstance);
 
+        //start removing the backdrop with the modal
+        checkRemoveBackdrop();
+
         //remove window DOM element
         removeAfterAnimate(modalWindow.modalDomEl, modalWindow.modalScope, 300, function() {
           modalWindow.modalScope.$destroy();
